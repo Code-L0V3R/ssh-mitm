@@ -85,13 +85,13 @@ function get_openssh {
     local openssh_checksum_expected='9846e3c5fab9f0547400b4d2c017992f914222b3fd1f8eee6c7dc6bc5e59f9f0'
 
     echo -e "\nGetting OpenSSH release key...\n"
-    wget https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/RELEASE_KEY.asc
+    wget -c https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/RELEASE_KEY.asc
 
     echo -e "\nGetting OpenSSH sources...\n"
-    wget https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$openssh_sources
+    wget -c https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$openssh_sources
 
     echo -e "\nGetting OpenSSH signature...\n"
-    wget https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$openssh_sig
+    wget -c https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$openssh_sig
 
     echo -e "\nImporting OpenSSH release key...\n"
     gpg --import RELEASE_KEY.asc
